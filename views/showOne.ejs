@@ -1,0 +1,22 @@
+<%- include("./components/header") %> 
+<% if (result) { %>
+   
+    <div class="card">
+        <div class="card-body">
+          <label for="">Name</label>
+          <h5 class="card-title"><%= result.name%></h5>
+          <label for="">Message</label>
+          <p class="card-text"><%= result.message%></p>
+          <p class="created-date"><%= result.createdAt.toISOString() %></p>
+          <a href=/edit-post/<%= result._id%> class="btn btn-primary">Edit Post</a>
+          <a href=/delete-post/<%= result._id%> class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+          
+    <% } else {%>
+      
+        <%}%>
+
+
+
+<%- include("./components/footer") %> 

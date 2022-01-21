@@ -1,0 +1,27 @@
+
+<%- include("./components/header") %> 
+
+<h3>Edit a Post</h3>
+
+<form method="POST" action=/edit-post/<%= result._id%>>
+
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" name="name" value="<%= result.name%>">
+      <% if (errors) { %>
+        <small id="err" class="form-text text-muted">
+        <%= errors.name %> </small>
+      <% } %>
+    <div class="form-group">
+      <label for="">Message</label>
+      <input type="text" name="message" value="<%= result.message%>" >
+      <% if (errors) { %>
+        <small id="err" class="form-text text-muted">
+        <%= errors.message %> </small>
+      <% } %>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+<%- include("./components/footer") %> 
